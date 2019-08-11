@@ -1,10 +1,11 @@
 package com.example.demo.service.impl;
 import java.util.List;
 
+import com.example.demo.mapper.SysUserMapper;
+import com.example.demo.model.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.example.demo.dao.SysUserMapper;
-import com.example.demo.model.SysUser;
+
 import com.example.demo.service.SysUserService;
 
 @Service
@@ -21,4 +22,25 @@ public class SysUserServiceImpl implements SysUserService{
     public List<SysUser> findAll(){
     	return sysUserMapper.selectAll();
     }
+
+	@Override
+	public void addUser(SysUser record) {
+		sysUserMapper.insert(record);
+	}
+
+	@Override
+	public void deleteUser(Long userId) {
+		sysUserMapper.deleteByPrimaryKey(userId);
+	}
+
+	@Override
+	public void updateUser(SysUser record) {
+		sysUserMapper.updateByPrimaryKeySelective(record);
+	}
+
+	@Override
+	public SysUser selectByName(String name) {
+		return sysUserMapper.selectByName(name);
+	}
+	
 }

@@ -16,7 +16,7 @@
   
     <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/springboot?useUnicode=true&amp;serverTimezone=GMT&amp;characterEncoding=utf-8" driverClass="com.mysql.cj.jdbc.Driver" password="root" userId="root" />
     <javaModelGenerator targetPackage="com.example.demo.model" targetProject="Spring-bootDemo" />
-    <sqlMapGenerator targetPackage="com.example.demo.sqlmap" targetProject="Spring-bootDemo" />
+    <sqlMapGenerator targetPackage="com.example.demo.mapper" targetProject="Spring-bootDemo" />
     <javaClientGenerator targetPackage="com.example.demo.dao" targetProject="Spring-bootDemo" type="XMLMAPPER" />
     <table schema="springboot" tableName="sys_user"/>
   </context>

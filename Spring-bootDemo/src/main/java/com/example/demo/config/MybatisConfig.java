@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 @Configuration
-@MapperScan("com.example.demo.**.dao")    // 扫描DAO
+@MapperScan("com.example.demo.mapper")
 public class MybatisConfig {
   @Autowired
   private DataSource dataSource;
@@ -19,11 +19,11 @@ public class MybatisConfig {
   public SqlSessionFactory sqlSessionFactory() throws Exception {
     SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
     sessionFactory.setDataSource(dataSource);
-    sessionFactory.setTypeAliasesPackage("com.example.demo.**.model");    // 扫描Model
+    sessionFactory.setTypeAliasesPackage("com.example.demo.**.model");
     
     PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-    sessionFactory.setMapperLocations(resolver.getResources("classpath*:**/sqlmap/*.xml"));    // 扫描映射文件
-    
+    sessionFactory.setMapperLocations(resolver.getResources("com/example/demo/mapper/*.xml"));
+
     return sessionFactory.getObject();
   }
 }
