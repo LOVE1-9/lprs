@@ -1,4 +1,6 @@
 import Vue from 'vue'
+import vUploader from 'v-uploader'
+import vDialogs from 'v-dialogs'
 
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
@@ -23,6 +25,17 @@ import '@/permission' // permission control
  * Currently MockJs will be used in the production environment,
  * please remove it before going online! ! !
  */
+Vue.use(vDialogs, { instanceName: '$dlg' })
+const uploaderConfig = {
+  uploadFileUrl: 'http://localhost:8080/api/upload',
+  deleteFileUrl: 'http://localhost:8080/api/deleteimg',
+  uploadFileObjName: 'file',
+  showMessage: (vue, message) => {
+    vue.$dlg.alert(message, { messageType: 'error' })
+  }
+}
+Vue.use(vUploader, uploaderConfig)
+
 import { mockXHR } from '../mock'
 if (process.env.NODE_ENV === 'production') {
   mockXHR()

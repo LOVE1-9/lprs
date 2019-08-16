@@ -1,6 +1,6 @@
 server:
   port: 8080
-  
+
 spring:
   http:
     encoding:
@@ -9,10 +9,12 @@ spring:
       enabled: true
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/lprs?useUnicode=true&serverTimezone=GMT&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://localhost:3306/lprs?unicode=true&serverTimezone=GMT&characterEncoding=utf-8&useSSL=false
     username: root
     password: root
 
 my:
   name: zhou
   age: 20
+
+spring.resources.static-locations: file:E://workspace-idea/lprs/Spring-bootDemo/res/

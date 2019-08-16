@@ -51,7 +51,7 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '主页', icon: 'dashboard' }
     }]
   },
 
@@ -149,12 +149,38 @@ export const constantRoutes = [
   },
 
   {
+    path: '/upload',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'upload',
+        component: () => import('@/views/upload/index'),
+        meta: { title: '图片上传', icon: 'upload' }
+      }
+    ]
+  },
+
+  {
+    path: '/icon',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/icons/index'),
+        name: 'Icons',
+        meta: { title: '图标', icon: 'icon', noCache: true }
+      }
+    ]
+  },
+
+  {
     path: 'external-link',
     component: Layout,
     children: [
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+        path: 'https://github.com/zhou997/lprs',
+        meta: { title: 'Github', icon: 'github' }
       }
     ]
   },

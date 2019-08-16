@@ -2,17 +2,18 @@ import request from '@/utils/request'
 
 export function login(data) {
   return request({
-    url: 'http://localhost:8080/api/login',
+    url: '/api/login',
     method: 'post',
-    // baseURL: "/api",
+    baseURL: '/api',
     data
   })
 }
 
 export function register(data) {
   return request({
-    url: 'http://localhost:8080/api/register',
+    url: '/api/register',
     method: 'post',
+    baseURL: '/api',
     data
   })
 }

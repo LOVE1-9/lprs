@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.controller.HelloController;
+import com.example.demo.controller.UserController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,9 +20,9 @@ public class DemoApplicationTests {
 	private MockMvc mvc;
 	@Before
 	public void setUp() throws Exception {
-		mvc = MockMvcBuilders.standaloneSetup(new HelloController()).build();
+		mvc = MockMvcBuilders.standaloneSetup(new UserController()).build();
 	}
-	
+
 	@Test
 	public void testHello() throws Exception {
 		mvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON))

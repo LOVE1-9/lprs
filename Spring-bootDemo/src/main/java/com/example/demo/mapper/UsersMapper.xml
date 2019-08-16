@@ -13,7 +13,7 @@
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     <!--@mbg.generated-->
-    select 
+    select
     <include refid="Base_Column_List" />
     from users
     where username = #{username,jdbcType=VARCHAR}
@@ -79,6 +79,6 @@
   <select id="selectAll" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
-    from sys_user
+    from users
   </select>
 </mapper>
